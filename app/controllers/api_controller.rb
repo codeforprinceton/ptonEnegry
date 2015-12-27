@@ -16,4 +16,7 @@ class ApiController < ApplicationController
       @data = File.read("#{Rails.root}/Stat model in 3D/Stat_Model.html").html_safe
       return render :json => @data
   end
+  
+  def models
+  end
 end

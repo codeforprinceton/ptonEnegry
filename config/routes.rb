@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'home#index'
   match 'about', to: 'home#about', via: 'get', as: 'about'
   match 'start', to: 'home#getstarted', via: 'get', as: 'start'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   match 'api/raw', to: 'api#raw', via: 'get', as: 'raw_api'
   match 'api/rawtemp', to: 'api#rawtemp', via: 'get', as: 'raw_api_temp'
   match 'api/geojson', to: 'api#geojson', via: 'get', as: 'raw_api_geojson'
+  match 'api/models', to: 'api#models', via: 'get', as: 'raw_api_models'
   match 'maps', to: 'maps#index', via: 'get', as: 'maps'
   match 'dashboard', to: 'dashboard#index', via: 'get', as: 'dashboard'
   match 'dashboard/history', to: 'dashboard#history', via: 'get', as: 'dashboard_history'
@@ -19,5 +21,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
   match 'import', to: 'import#index', via: 'get', as: 'import'
   match 'import/submitfile', to: 'import#submitfile', via: 'post', as: 'submitfile'
+  match 'datasheets', to: 'datasheets#index', via: 'get', as: 'datasheets'
+  match 'datasheets/statmodel', to: 'datasheets#statmodel', via: 'get', as: 'statmodel'
 
 end
